@@ -1,16 +1,18 @@
 import React from 'react';
 import ImageBox from './imageBox';
+import BrandSelector from '../components/brandSelector.js';
+
 
 class MakeupBox extends React.Component {
 
   render(){
     return(
-      <React.Fragment>
+      <div className="makeup-box">
         <h1>COSMETICS</h1>
         <ImageBox/>
-        {/* brandselector
-        productcontainer */}
-      </React.Fragment>
+        <BrandSelector/>
+        {/* productcontainer */}
+      </div>
     )
   }
 
