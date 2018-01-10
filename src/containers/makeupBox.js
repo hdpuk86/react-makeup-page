@@ -9,7 +9,8 @@ class MakeupBox extends React.Component {
     super(props);
     this.state = {
       products: [],
-      selectedBrand: "almay"
+      selectedBrand: "almay",
+      brandIndex: 0
     }
   }
 
@@ -28,12 +29,13 @@ class MakeupBox extends React.Component {
   }
 
   render(){
+    const selectedBrand = this.state.products[this.state.brandIndex];
     return(
       <div className="makeup-box">
         <h1>COSMETICS</h1>
         <ImageBox/>
-        <BrandSelector/>
-        <ProductBox/>
+        <BrandSelector products={this.state.products}/>
+        <ProductBox brand={selectedBrand}/>
       </div>
     )
   }
