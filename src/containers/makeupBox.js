@@ -39,8 +39,8 @@ class MakeupBox extends React.Component {
     return(
       <div className="makeup-box">
         <h1>COSMETICS</h1>
-        <ImageBox/>
-        <BrandSelector products={this.state.products} handleBrandChange={this.handleBrandChange}/>
+        <ImageBox products={this.state.products}/>
+        <BrandSelector handleBrandChange={this.handleBrandChange}/>
         <ProductBox products={this.state.products}/>
       </div>
     )
