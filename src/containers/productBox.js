@@ -11,9 +11,9 @@ class ProductBox extends React.Component {
       return <Product details={product} key={product.id}/>
     });
     return(
-      <ul>
+      <div className="products-box">
         {productList}
-      </ul>
+      </div>
     )
   }
 
