@@ -2,11 +2,6 @@ import React from 'react';
 
 class ImageBox extends React.Component {
 
-  // constructor(props){
-  //   super(props);
-
-  // }
-  //
   getRandomInt(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
@@ -27,12 +22,11 @@ class ImageBox extends React.Component {
       return null;
     }
     const products = this.props.products;
-    const numProducts = this.props.products.length;
+    const numProducts = products.length;
     const randomProducts = this.getRandomProducts(numProducts, products);
     const images = randomProducts.map((product) => {
-      return <img src={product.image_link} key={product.name} alt={product.name} height="250px"/>
+      return <img src={product.image_link} key={product.id} alt={product.name} height="250px"/>
     })
-
     return(
       <React.Fragment>
         <div className="brand-name">
