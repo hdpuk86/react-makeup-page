@@ -12,16 +12,18 @@ class BrandSelector extends React.Component {
   }
 
   render(){
-    const brands = ["almay", "anna sui", "annabelle", "benefit", "burts bees", "butter london", "cargo cosmetics", "china glaze", "clinique", "covergirl", "dalish", "dior", "dr. hauschka", "e.l.f.", "essie", "fenty", "glossier", "iman",
-    "l'oreal", "marcelle", "maybelline", "milani", "mineral fusion", "misa", "mistura", "moov", "nyx", "orly", "pacifica",
-    "physicians formula", "piggy paint", "pure anada", "revlon", "salon perfect", "sante", "sinful colours", "smashbox", "stila", "suncoat", "wet n wild", "zorah"];
+    const brands = ["almay", "annabelle", "benefit", "clinique", "covergirl", "dior", "e.l.f.", "essie", "fenty", "glossier", "iman",
+    "l'oreal", "marcelle", "maybelline", "milani", "misa", "moov", "nyx", "orly", "pacifica", "revlon", "sante", "smashbox", "stila", "suncoat", "zorah"];
     const options = brands.map((brand) => {
       return <option key={brand} value={brand}>{brand}</option>
     })
     return(
-      <select className="BrandSelector" onChange={this.handleSelectBrand}>
-        {options}
-      </select>
+      <div className="selector">
+        <h3>Pick a brand:</h3>
+        <select className="BrandSelector" onChange={this.handleSelectBrand}>
+          {options}
+        </select>
+      </div>
     )
   }
 

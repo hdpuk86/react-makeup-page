@@ -23,21 +23,25 @@ class ImageBox extends React.Component {
   }
 
   render(){
-    if(this.props.products.length == 0){
+    if(this.props.products.length === 0){
       return null;
     }
     const products = this.props.products;
     const numProducts = this.props.products.length;
     const randomProducts = this.getRandomProducts(numProducts, products);
-    console.log(randomProducts);
     const images = randomProducts.map((product) => {
       return <img src={product.image_link} key={product.name} alt={product.name} height="250px"/>
     })
 
     return(
-      <div className="image-box">
-        {images}
-      </div>
+      <React.Fragment>
+        <div className="brand-name">
+          <h1>{products[0].brand}</h1>
+        </div>
+        <div className="image-box">
+          {images}
+        </div>
+      </React.Fragment>
     )
   }
 

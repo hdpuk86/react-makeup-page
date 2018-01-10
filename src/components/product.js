@@ -4,7 +4,7 @@ const Product = (props) => {
   const details = props.details;
   return(
     <div className="product">
-      <img src={details.image_link} alt={details.name}/>
+      <img src={details.image_link} alt={details.name} height="200px"/>
       <ul>
         <li className="product-name">{details.name}</li>
         <li className="product-descr">{details.description}</li>
