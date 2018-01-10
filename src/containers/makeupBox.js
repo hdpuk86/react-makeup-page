@@ -8,14 +8,12 @@ class MakeupBox extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      products: [],
-      selectedBrand: "almay",
-      brandIndex: 0
+      products: []
     }
+    this.handleBrandChange = this.handleBrandChange.bind(this);
   }
 
-  componentDidMount(){
-    const url = "http://makeup-api.herokuapp.com/api/v1/products.json?brand=" + this.state.selectedBrand;
+  makeRequest(url){
     const request = new XMLHttpRequest();
     request.open('GET', url);
     request.addEventListener('load', () => {
@@ -28,14 +26,23 @@ class MakeupBox extends React.Component {
     request.send();
   }
 
+  componentDidMount(){
+    this.makeRequest("https://makeup-api.herokuapp.com/api/v1/products.json?brand=almay");
+  }
+
+  handleBrandChange(newBrand){
+    const url = "https://makeup-api.herokuapp.com/api/v1/products.json?brand=" + newBrand;
+    this.makeRequest(url);
+
+  }
+
   render(){
-    const selectedBrand = this.state.products[this.state.brandIndex];
     return(
       <div className="makeup-box">
         <h1>COSMETICS</h1>
         <ImageBox/>
-        <BrandSelector products={this.state.products}/>
-        <ProductBox brand={selectedBrand}/>
+        <BrandSelector products={this.state.products} handleBrandChange={this.handleBrandChange}/>
+        <ProductBox products={this.state.products}/>
       </div>
     )
   }
