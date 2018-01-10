@@ -33,7 +33,6 @@ class MakeupBox extends React.Component {
   handleBrandChange(newBrand){
     const url = "https://makeup-api.herokuapp.com/api/v1/products.json?brand=" + newBrand;
     this.makeRequest(url);
-
   }
 
   render(){

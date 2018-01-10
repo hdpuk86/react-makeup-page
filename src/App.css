@@ -10,6 +10,20 @@ li {
   margin-bottom: 10px;
 }
 
+.makeup-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: grey;
+  color: white;
+}
+
+.products-box {
+  color: grey;
+  background-color: white;
+  width: 75%;
+}
+
 .product {
   display: flex;
   flex-direction: row;
