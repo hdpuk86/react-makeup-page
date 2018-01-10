@@ -1,7 +1,7 @@
 import React from 'react';
 import ImageBox from './imageBox';
 import BrandSelector from '../components/brandSelector.js';
-
+import ProductBox from './productBox';
 
 class MakeupBox extends React.Component {
 
@@ -11,7 +11,7 @@ class MakeupBox extends React.Component {
         <h1>COSMETICS</h1>
         <ImageBox/>
         <BrandSelector/>
-        {/* productcontainer */}
+        <ProductBox/>
       </div>
     )
   }
